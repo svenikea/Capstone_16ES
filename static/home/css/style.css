@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;1,300&display=swap');
+* {
+  /*  font-family: 'Oxygen', sans-serif; */
+  font-family: 'Source Sans Pro', sans-serif;
+/*  font-size: 20px; */
+}
+
+/*---------------------------------------------------------- Jumbotron -----------------------------------------------------------*/
+
+.animate__animated.animate__fadeIn {
+    --animate-duration: 2s;
+    --animate-delay: 1s;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    background-color:transparent;
+    
+}
+
+a:hover {
+    background-color: transparent;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 1s ease;
+}
+.img-fluid {
+    border-radius: 10px;    
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    font-weight: lighter;
+    color: #888;
+    background: #F8F8F8;
+}
+.jumbotron {
+    margin: 0 0;
+}
+.jumbotron-begin {
+  /* The image used */
+  background-image: url("../img/header.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+    padding: 15rem 0 15rem 0;
+
+}
+
+
+.jumbotron-skill {
+    color: white;
+    background: url("../img/bgtr.svg") top right no-repeat, url("../img/bgbl.svg") bottom left no-repeat, 
+    url("../img/bgbl.svg") bottom left no-repeat, url("../img/overlay.png"), linear-gradient(45deg, #b39c68, #a56365, #412e4c); 
+}
+
+div.jumbotron-skill > div.container > div.row {
+    text-align: center;
+}
+
+div.jumbotron-skill > div.container {
+    text-align: center;
+}
+
+.jumbotron-header, .jumbotron-header2{
+
+    background: #F8F8F8;
+    margin: 2.6rem;
+    text-align: center;
+}
+
+
+.jumbotron-story {
+    background: url("../img/bgtr.svg") top right no-repeat, url("../img/bgbl.svg") bottom left no-repeat, url("../img/overlay.png"), linear-gradient(45deg, #384955, #655361, #85505f);
+    color: white;
+    padding-top: 10%;
+}
+
+.jumbotron-contact {
+    text-align: center;
+    background: black;
+}
+
+div.jumbotron-begin > div.container > a {
+    color: white;
+}
+
+
+/* Normal laptop/Desktop screen */
+@media (max-width: 1260px) {
+    .jumbotron-begin {
+        padding: 11rem 0 11rem 0;
+    }
+}
+@media (max-width: 1024px) {
+    .jumbotron-begin {
+        padding: 10rem 0 10rem 0;
+    }
+}
+@media (max-width: 1020px) {
+    .jumbotron-begin {
+        padding: 9rem 0 9rem 0;
+    }
+}
+
+/* Normal Tablet screen */
+@media (max-width: 950px) {
+    .jumbotron-begin {
+        padding: 6rem 0 6rem 0;
+    }
+}
+
+/* Normal Phone/Mobile screen */
+@media (max-width: 768px) {
+    .jumbotron-begin {
+        padding: 2rem 0 2rem 0;
+    }
+}
+@media (max-width: 490px) {
+    .jumbotron-begin {
+        padding: 0.5rem 0 0.5rem 0;
+    }
+}
+
+
+@media (max-width: 1260px) {
+    .jumbotron-header, .jumbotron-header2 {
+    margin: 0.8rem;
+    }
+}
+
+@media (max-width: 950px) {
+    .jumbotron-header, .jumbotron-header2  {
+    margin: 0.8rem;
+    }
+}
+
+@media (max-width: 768px){
+    .overflow-hidden {
+        overflow-x:hidden;
+    }
+    .overflow-visible {
+        overflow-x:visible;
+    }
+}
+
+/*---------------------------------------------------------- End of Jumbotron -----------------------------------------------------------*/
+
+
+
+
+/*---------------------------------------------------------- Button -----------------------------------------------------------*/
+
+.btn {
+    border: 1px solid white;
+    width: 30%;
+    margin: 2rem;
+}
+
+.btn-begin  {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid white;
+    font-size: 25px; 
+ /*   margin: 2.5rem ; */
+ padding: 1rem;
+ margin-left: 0;
+ margin-right: 0;
+
+}
+
+.btn-begin:hover {
+    transition: 1s ease;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.btn-skill  {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid white;
+    color: white;
+/*    padding: 1rem 5rem; */ 
+    font-size: 25px;
+    padding: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+
+.btn-skill:hover {
+    transition: 1s ease;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    color: white;
+}
+
+.btn-story {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid white;
+    color: white;
+    font-size: 19px;
+    margin-bottom: 4rem;
+    width: 80%;
+    padding: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+
+.btn-send {
+    background-color: #3d3d3d;
+    border: 1px solid white;
+    color: white;
+/*    padding: 1rem 5rem; */ 
+    font-size: 25px;
+    padding: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    width: 30%;
+
+}
+
+.btn-clear {
+    border: 1px solid #888;
+    color: #888;
+/*    padding: 1rem 5rem; */ 
+    font-size: 25px;
+    padding: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    width: 30%;
+
+}
+
+.btn-send:hover {
+    background-color: rgba(61,61,61, 0.8);
+    color: white;
+}
+
+
+.btn-story:hover {
+    transition: 1s ease;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 1260px) {
+    .btn-begin, .btn-skill {
+/*      padding: 0.8rem 3rem; */  
+        font-size: 19px;  
+    }
+}
+
+@media (max-width: 950px) {
+    .spacing {
+        text-align: center;
+    }
+    .btn-story, .btn-skill, .btn-begin, .btn-send, .btn-clear {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .btn-begin, .btn-skill {
+        font-weight: bold;
+        min-height: 120%;
+        min-width: 80%;
+        font-size: 19px;
+    }
+    .spacing {
+        text-align: center;
+    }
+    .btn-story, .btn-send, .btn-clear {
+        width: 80%;
+    }
+}
+.btn-gap {
+    margin: 1.5% 1.5%;
+}
+
+
+
+/*---------------------------------------------------------- End of Button -----------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------- Text and Spacing -----------------------------------------------------------*/
+
+h1.spacing {
+    padding-top: 1em;
+    font-size: 3em;
+    line-height: 1.25em;
+}
+
+p.spacing {
+    padding-top: 1rem;
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+@media (max-width: 1260px){
+    h1.spacing {
+        font-size: 2.5em;
+        padding-top: 2.8em;
+    }
+    p.spacing {
+        padding-top: 1rem;
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+}
+
+@media (max-width: 950px){
+    h1.spacing {
+        padding-top: 2.7rem;
+    }
+    p.spacing {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px){
+    h1.spacing {
+        font-size: 2em;
+        padding-top: 3rem;
+    }
+    p.spacing {
+        font-size: 1.3rem;
+    }
+}
+
+h2.header2-detail, h2.header1-detail{
+    font-size: 2em;
+
+}
+
+h4.story-detail {
+    padding-bottom: 10%;
+}
+
+p.header2-detail, p.header1-detail{
+    padding-top: 2.8rem;
+    font-size: 1.25em;
+
+}
+
+.emailing {
+    padding: 2.8rem;
+    text-align: center;
+    color: #888;
+}
+
+div.col-lg-4 > div.container-fluid {
+    text-align: left;
+}
+
+p.story-detail {
+    font-size: 1.3rem;
+}
+
+
+@media (max-width: 1260px) {
+    h2.header1-detail, h2.header2-detail {
+        font-size: 2.4em;
+    }
+    p.header1-detail, p.header2-detail, p.story-detail {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 950px) {
+    h4.story-detail {
+        text-align: center;
+        padding-bottom: 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    p.header1-detail, p.header2-detail, p.story-detail {
+       font-size: 1em;
+       padding-bottom: 0;
+    }
+    h2.header1-detail,  h2.header2-detail {
+        font-size: 1.5rem;
+    }
+    h4.story-detail {
+        font-size: 1.3em;
+        font-weight: lighter;
+    }
+}
+
+@media (max-width: 550px) {
+    h4.story-detail {
+        font-size: 1.1em;
+        font-weight: lighter;
+    }
+}
+
+div.copyright-stuff {
+    padding-top: 3%;
+}
+
+
+
+/*---------------------------------------------------------- End of Spacing -----------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------- Icons -----------------------------------------------------------*/
+
+
+div.jumbotron-skill > div.container > div.row > div.col-lg > span.feature-icon > span  {
+    color: white;
+    border: 1px solid white;
+    border-radius:100%;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+    line-height: 2em;
+    background: rgba(255, 255, 255, 0.15);
+}
+.feature-icon {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 5em;
+    margin-bottom: 2.75em;
+    cursor: default;
+}
+.feature-icon::before {
+    content: '';
+    background:rgba(255, 255, 255, 0.65);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -0.325em;
+    width: 0.65em;
+    height: 0.65em;
+    display: block;
+    border-radius: 100%;
+}
+
+.feature-icon::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0.65em;
+    width: 1px;
+    height: 4.35em;
+    background:rgba(255, 255, 255, 0.65);
+    margin-left: -0.5px;
+}
+
+.row-spacing {
+    margin-bottom: 4.5%;
+    text-align: center;
+}
+
+div.jumbotron-contact > div.container > a{
+    border: 1px solid white;
+    line-height: 2rem;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 180%;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/*---------------------------------------------------------- End of Icons -----------------------------------------------------------*/
+
+

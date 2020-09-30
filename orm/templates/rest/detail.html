@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Detail</title>
+</head>
+<body>	
+		<li>Shoe: {{ object.name }}</li>
+		<li>Foot size: {{ object.foot_size }}</li>
+		<li>Price: {{ object.price }}</li>
+		<li>Quanity: {{ object.quanity }}</li>
+		<li>In-Stock: {{ object.available }}</li>
+		{% for brand_name in object.brand.all %}
+		{% if object.foot_size.id == foot_size.id %}
+		<li>Brand: {{ brand_name }}</li>
+		{% endif %}
+		{% endfor %}
+</body>
+</html>
