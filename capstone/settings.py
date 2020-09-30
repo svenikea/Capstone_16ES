@@ -39,14 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Custom APp
-    #'home',
-    #'parking',
-    #'learn',
-    #'workdb',
-    #'blog',
-    #'fbv_cbv',
-    #'django_tables2',
-    #'table',
     'rest',
     'rest_framework',
     'orm',
