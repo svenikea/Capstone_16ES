@@ -1,0 +1,33 @@
+{% extends 'parkinglotmanager/base.html' %}
+{% block main %}
+	<div class="container">
+		<table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>RFID</th>
+                <th>Lot</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for index in parkinglist %}
+
+        	<tr>
+        		<td>
+                    <a href="{% url 'alpr:list-detail' pk=index.pk %}">{{ index.parkinglotid }}</a>
+        		</td>
+        		</td>
+        		<td>
+        			{{ index.parkinglotname }}
+        	</tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                 <th>RFID</th>
+                <th>Lot</th>
+            </tr>
+        </tfoot>
+    </table>
+	</div>
+{% endblock %}
+{% block titleDoc %} lists {% endblock %}

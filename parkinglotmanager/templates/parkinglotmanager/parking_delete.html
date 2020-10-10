@@ -1,0 +1,21 @@
+{% extends 'parkinglotmanager/base.html' %}
+{% load rest_framework %}
+{% block main %}
+<div class="container">
+	<div class="container-fluid">
+		<form action="{% url 'alpr:parking-delete' pk=object.pk %}" method="POST">
+    	{% csrf_token %}
+    	<li>rfid</li>
+    	<li>parkinglotid</li>
+    	<li>platenumber</li>
+    	<li>plateimgurl</li>
+    	<li>checkintime</li>
+    	<input type="submit" value="Save">
+		</form>		
+	</div>
+</div>
+
+{% endblock %}
+{% block titleDoc %}
+Deleting {{ object.rfid }}
+{% endblock %}

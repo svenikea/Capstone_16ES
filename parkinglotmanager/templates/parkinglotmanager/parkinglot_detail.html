@@ -1,0 +1,16 @@
+{% extends 'parkinglotmanager/base.html' %}
+{% block main %}
+<li>{{ parking.rfid }}</li>
+{% for parkinglot in parking.parkinglotid.all %}
+{% if parking.rfid.pk == rfid.pk %}
+<li>Lot: {{ parkinglot }}</li>
+{% endif %}
+{% endfor %}
+<li>{{ parking.parkinglotid }}</li>
+<li>{{ parking.platenumber }}</li>
+<li>{{ parking.plateimgurl }}</li>
+<li>{{ parking.checkintime }}</li>
+{% endblock %}
+{% block titleDoc %}
+Detail {{ parking.rfid }}
+{% endblock %}

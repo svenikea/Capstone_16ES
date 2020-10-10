@@ -1,0 +1,55 @@
+{% extends 'parkinglotmanager/base.html' %}
+{% block main %}
+<div class="container">
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>RFID</th>
+            <th>parkinglotid</th>
+            <th>platenumber</th>
+            <th>plateimgurl</th>
+            <th>checkintime</th>
+            <th>Action</th>   
+        </tr>
+    </thead>
+    <tbody>
+    {% for index in parkinglist %}
+
+        <tr>
+            <td>
+                {{ index.rfid }}
+            </td>
+            <td>
+                {{ index.parkinglotid }}
+            </td>
+            <td>
+                {{ index.platenumber }}
+            </td>
+            <td>
+                {{ index.plateimgurl }}
+            </td>
+            <td>
+                {{ index.checkintime }}
+            </td>
+            <td>
+                <span><a href="{% url 'alpr:del' pk=index.pk  %}"><i class="far fa-trash-alt"></i></a> </span>  <span><a href="{% url 'alpr:parking-update' pk=index.pk  %}"><i class="far fa-edit" ></i></a></span>
+            </td>	          		
+        </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>RFID</th>
+            <th>parkinglotid</th>
+            <th>platenumber</th>
+            <th>plateimgurl</th>
+            <th>checkintime</th>
+            <th>Action</th>   
+        </tr>
+    </tfoot>
+</table>
+</div>
+{% endblock %}
+{% block titleDoc %}
+
+{% endblock %}
