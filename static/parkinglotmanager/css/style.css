@@ -1,0 +1,11 @@
+div.container {
+	padding-top: 2%;
+}
+div.container table tr td a{
+	text-decoration: none;
+	color: black;
+}
+div.container table tr td a:hover {
+	text-decoration: none;
+		color: black;
+}
