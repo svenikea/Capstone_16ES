@@ -157,14 +157,14 @@ class LotDetail(APIView):
 
 # This is unnecessary because we don't need to view the parking lot detail
 # we can comment it out but remember to do the same to urls.py
-# class ParkingDetail(APIView):
-#     renderer_classes = [TemplateHTMLRenderer]
-#     template_name = 'parkinglotmanager/parkinglot_detail.html'
-
-#     def get(self, request, pk):
-#         parking = get_object_or_404(Parking, pk=pk)
-#         #parking = Parking.objects.filter(pk=pk)
-#         context = {
-#             'parking': parking
-#         }
-#         return Response(context)
+class ParkingDetail(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'parkinglotmanager/parkinglot_detail.html'
+    def get(self, request, pk):
+        parking = get_object_or_404(Parking, pk=pk) 
+        query = Parking.objects.filter(pk=pk)
+        context = {
+                'parking': parking
+                }
+        print(context)
+        return Response(context)
