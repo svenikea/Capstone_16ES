@@ -32,7 +32,7 @@
                 {{ index.checkintime }}
             </td>
             <td>
-                <span><a href="{% url 'alpr:del' pk=index.pk  %}"><i class="far fa-trash-alt"></i></a> </span>  <span><a href="{% url 'alpr:parking-update' pk=index.pk  %}"><i class="far fa-edit" ></i></a></span>
+		    <span><a href="{% url 'alpr:del' pk=index.pk  %}"><i class="far fa-trash-alt"></i></a> </span>  <span><a href="{% url 'alpr:parking-update' pk=index.pk  %}"><i class="far fa-edit" ></i></a> <a href="{% url 'alpr:parking-detail' pk=index.pk %}"><i class="fas fa-eye"></i></a></span>
             </td>	          		
         </tr>
     {% endfor %}
