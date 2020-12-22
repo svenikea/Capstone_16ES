@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Parking, Parkinglotlist
+from .models import Parking, Parkinglotlist, Stafflist
 
 # Child
 
@@ -36,4 +36,10 @@ class ParkinglotlistSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Parkinglotlist
+        fields = '__all__'
+
+
+class StafflistSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Stafflist
         fields = '__all__'
