@@ -1,7 +1,7 @@
 from django.urls import path, include
 from .views import ParkingLotList, ParkingList, \
     ParkingUpdate, ParkingDelete, ParkingCreate, Task_Delete, \
-    LotDetail, ParkingDetail
+    LotDetail, ParkingDetail, StaffList
 app_name = "alpr"
 urlpatterns = [
     path('lotlist/', ParkingLotList.as_view(), name="list-all"),
@@ -11,9 +11,6 @@ urlpatterns = [
     path('delete/<str:pk>/', ParkingDelete.as_view(), name="parking-delete"),
     path('del/<str:pk>/', Task_Delete, name="del"),
     path('new/', ParkingCreate.as_view(), name="parking-create"),
-
-
-
-
     path('details/<str:pk>/', ParkingDetail.as_view(), name="parking-detail"),
+    path('staffs/', StaffList.as_view(), name="staff-list"),
 ]
