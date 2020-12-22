@@ -191,8 +191,11 @@ class Stafflist(models.Model):
     staffid = models.CharField(primary_key=True, max_length=6)
     stafffullname = models.CharField(max_length=30, blank=True, null=True)
     parkinglotid = models.ForeignKey(
-        Parkinglotlist, models.DO_NOTHING, db_column='parkinglotid', blank=True, null=True)
+        'Parkinglotlist', models.DO_NOTHING, db_column='parkinglotid', blank=True, null=True)
 
     class Meta:
         app_label = 'parkinglotmanager'
         db_table = 'stafflist'
+
+    def __str__(self):
+        return self.stafffullname
