@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
-from .models import Parking, Parkinglotlist
+from .models import Parking, Parkinglotlist, Stafflist
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import ParkingSerializer, ParkinglotlistSerializer
+from .serializers import ParkingSerializer, ParkinglotlistSerializer, StafflistSerializer
 from rest_framework.decorators import api_view
 # Create your views here.
 
@@ -52,6 +52,8 @@ class ParkingLotListDetail(APIView):
         return redirect()
 
 # CRUD of Parking model
+
+
 class ParkingList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'parkinglotmanager/parking_list.html'
@@ -132,14 +134,16 @@ class ParkingCreate(APIView):
             return Response(context)
         return redirect('alpr:parking-list')
 
-#@api_view(['DELETE'])
+# @api_view(['DELETE'])
+
+
 def Task_Delete(request, pk):
     tasklist = get_object_or_404(Parking, pk=pk)
     tasklist.delete()
     return redirect("alpr:parking-list")
 
 
-# This is to list all related child parent via a foreign key 
+# This is to list all related child parent via a foreign key
 class LotDetail(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'parkinglotmanager/parkinglot_child.html'
@@ -153,18 +157,31 @@ class LotDetail(APIView):
         return Response(context)
 
 
-
-
 # This is unnecessary because we don't need to view the parking lot detail
 # we can comment it out but remember to do the same to urls.py
 class ParkingDetail(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'parkinglotmanager/parkinglot_detail.html'
+
     def get(self, request, pk):
-        parking = get_object_or_404(Parking, pk=pk) 
+        parking = get_object_or_404(Parking, pk=pk)
         query = Parking.objects.filter(pk=pk)
         context = {
-                'parking': parking
-                }
+            'parking': parking
+        }
         print(context)
+        return Response(context)
+
+# This is where we show the staff list
+
+
+class StaffList(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'parkinglotmanager/staff_list.html'
+
+    def get(self, request):
+        lists = Stafflist.objects.all()
+        context = {
+            'staffs': lists
+        }
         return Response(context)
