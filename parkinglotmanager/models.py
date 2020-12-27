@@ -7,6 +7,7 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 from django.urls import reverse
+from simple_history.models import HistoricalRecords
 
 
 class AuthGroup(models.Model):
@@ -162,6 +163,7 @@ class Parking(models.Model):
     platenumber = models.CharField(max_length=15, blank=True, null=True)
     plateimgurl = models.CharField(max_length=255, blank=True, null=True)
     checkintime = models.DateTimeField(blank=True, null=True)
+    history = HistoricalRecords()
 
     class Meta:
         app_label = 'parkinglotmanager'
@@ -178,6 +180,7 @@ class Parking(models.Model):
 class Parkinglotlist(models.Model):
     parkinglotid = models.CharField(primary_key=True, max_length=6)
     parkinglotname = models.CharField(max_length=40, blank=True, null=True)
+    history = HistoricalRecords()
 
     class Meta:
         app_label = 'parkinglotmanager'
@@ -192,6 +195,7 @@ class Stafflist(models.Model):
     stafffullname = models.CharField(max_length=30, blank=True, null=True)
     parkinglotid = models.ForeignKey(
         'Parkinglotlist', models.DO_NOTHING, db_column='parkinglotid', blank=True, null=True)
+    history = HistoricalRecords()
 
     class Meta:
         app_label = 'parkinglotmanager'
