@@ -7,7 +7,8 @@ For more information on this file, see
 https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
 """
 
-import os, sys
+import os
+import sys
 
 from django.core.wsgi import get_wsgi_application
 sys.path.append('/home/john/Documents/project/Capstone_16ES')
