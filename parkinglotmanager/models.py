@@ -90,7 +90,8 @@ class Cameralist(models.Model):
         # permissions = [
         #     ('edit_cameralist', 'Can edit camera list')
         # ]
-
+    def __str__(self):
+        return self.cameraid
 
 class DjangoAdminLog(models.Model):
     action_time = models.DateTimeField()
