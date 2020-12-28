@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
-from .models import Parking, Parkinglotlist, Stafflist
+from .models import Parking, Parkinglotlist, Stafflist, History, Cameralist
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -183,5 +183,29 @@ class StaffList(APIView):
         lists = Stafflist.objects.all()
         context = {
             'staffs': lists
+        }
+        return Response(context)
+
+
+class History(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'parkinglotmanager/history.html'
+
+    def get(self, request):
+        lists = Parking.history.all()
+        context = {
+            'history': lists
+        }
+        return Response(context)
+
+
+class CameraList(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'parkinglotmanager/camera.html'
+
+    def get(self, request):
+        camera = Cameralist.objects.all()
+        context = {
+            'camera': camera
         }
         return Response(context)
