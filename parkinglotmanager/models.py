@@ -8,6 +8,8 @@
 from django.db import models
 from django.urls import reverse
 from simple_history.models import HistoricalRecords
+#from audit_log.models.fields import LastUserField
+#from audit_log.models.managers import AuditLog
 
 
 class AuthGroup(models.Model):
@@ -90,8 +92,10 @@ class Cameralist(models.Model):
         # permissions = [
         #     ('edit_cameralist', 'Can edit camera list')
         # ]
+
     def __str__(self):
         return self.cameraid
+
 
 class DjangoAdminLog(models.Model):
     action_time = models.DateTimeField()
@@ -165,6 +169,7 @@ class Parking(models.Model):
     plateimgurl = models.CharField(max_length=255, blank=True, null=True)
     checkintime = models.DateTimeField(blank=True, null=True)
     history = HistoricalRecords()
+    #audit_log = AuditLog()
 
     class Meta:
         app_label = 'parkinglotmanager'
