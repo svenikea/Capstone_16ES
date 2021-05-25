@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Custom app
-    'simple_history',
     'parkinglotmanager',
     'rest_framework',
 ]
@@ -85,7 +84,7 @@ DATABASES = {
         'NAME': 'parking',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'db',
+        'HOST': 'postgres',
         'PORT': '5432',
     }
 }
